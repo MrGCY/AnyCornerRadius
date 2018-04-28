@@ -44,12 +44,14 @@ CGPathRef CYPathCreateWithRoundedRect(CGRect bounds,
       radius : 圆的半径
       startAngle : 起始角度
       endAngle ： 结束角度
-      clockwise : 是否封闭
+      clockwise : 是否是顺时针
       void CGPathAddArc(CGMutablePathRef cg_nullable path,
       const CGAffineTransform * __nullable m,
       CGFloat x, CGFloat y, CGFloat radius, CGFloat startAngle, CGFloat endAngle,
       bool clockwise)
       */
+     //虽然顺时针参数是YES，在iOS中的UIView中，这里实际是逆时针
+     
      CGMutablePathRef path = CGPathCreateMutable();
      //顶 左
      CGPathAddArc(path, NULL, topLeftCenterX, topLeftCenterY,cornerRadii.topLeft, M_PI, 3 * M_PI_2, NO);
