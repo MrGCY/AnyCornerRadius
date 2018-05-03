@@ -97,8 +97,6 @@
      [self drawGradientLineWithContent:context];
      //内侧线
      [self drawLineWithContent:context];
-     
-     CGContextRelease(context);
 }
 -(void)drawLineWithContent:(CGContextRef)context{
      //画线
